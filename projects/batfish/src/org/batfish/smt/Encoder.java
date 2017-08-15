@@ -700,11 +700,11 @@ public class Encoder {
         VerificationStats stats = new VerificationStats(numNodes, numEdges, numVariables,
                 numConstraints, time);
 
-        //if (ENABLE_DEBUGGING) {
+        if (ENABLE_DEBUGGING) {
             System.out.println("Constraints: " + stats.getNumConstraints());
             System.out.println("Variables: " + stats.getNumVariables());
             System.out.println("Z3 Time: " + stats.getTime());
-        //}
+        }
 
         if (status == Status.UNSATISFIABLE) {
             return new VerificationResult(true, null, null, null, null, null);
