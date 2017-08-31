@@ -274,7 +274,7 @@ null_block
    (
       description_line
       | null_inner
-      | unrecognized_line
+      | { !_disableUnrecognized }? unrecognized_line
    )*
 ;
 
@@ -909,5 +909,5 @@ s_null
 
 unrecognized_block_stanza
 :
-   unrecognized_line null_inner*
+   { !_disableUnrecognized }? unrecognized_line null_inner*
 ;
