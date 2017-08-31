@@ -1733,6 +1733,11 @@ s_privilege
    ) ~NEWLINE* NEWLINE
 ;
 
+s_process_max_time
+:
+   NO? PROCESS_MAX_TIME DEC NEWLINE
+;
+
 s_redundancy
 :
    NO? REDUNDANCY ~NEWLINE* NEWLINE
@@ -2278,6 +2283,7 @@ stanza
    | s_phone_proxy
    | s_policy_map
    | s_privilege
+   | s_process_max_time
    | s_qos_mapping
    | s_redundancy
    | s_role
