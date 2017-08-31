@@ -32,6 +32,13 @@ l_exec_timeout
    EXEC_TIMEOUT minutes = DEC seconds = DEC? NEWLINE
 ;
 
+l_length
+:
+   (LENGTH DEC NEWLINE)
+   |
+   (NO LENGTH)
+;
+
 l_login
 :
    LOGIN
@@ -121,6 +128,7 @@ s_line
    (
       l_access_class
       | l_exec_timeout
+      | l_length
       | l_login
       | l_null
       | l_transport
