@@ -2947,7 +2947,12 @@ EXTCOMM_LIST
 
 EXTCOMMUNITY
 :
-   'extcommunity' -> pushMode ( M_Extcommunity )
+   'extcommunity'
+   {
+     if (lastTokenType == SET) {
+       pushMode(M_Extcommunity);
+     }
+   }
 ;
 
 EXTCOMMUNITY_LIST
