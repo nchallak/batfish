@@ -1236,6 +1236,7 @@ s_archive
          | LOG
          | LOGGING
          | NOTIFY
+         | PATH
       ) ~NEWLINE* NEWLINE
    )*
 ;
