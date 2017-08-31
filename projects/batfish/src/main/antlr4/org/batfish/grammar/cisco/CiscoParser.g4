@@ -246,7 +246,11 @@ dhcp_profile_null
 
 domain_lookup
 :
-   LOOKUP SOURCE_INTERFACE iname = interface_name NEWLINE
+   LOOKUP
+   (
+      SOURCE_INTERFACE iname = interface_name
+      | DISABLE
+   )NEWLINE
 ;
 
 domain_name
@@ -1334,6 +1338,7 @@ s_dial_peer
 
 s_domain
 :
+   NO?
    DOMAIN
    (
       VRF vrf = variable
