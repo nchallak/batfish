@@ -1438,6 +1438,16 @@ s_flow
    )*
 ;
 
+s_flow_sampler_map
+:
+   NO? FLOW_SAMPLER_MAP ~NEWLINE* NEWLINE s_fsm_mode?
+;
+
+s_fsm_mode
+:
+   MODE RANDOM ONE_OUT_OF DEC NEWLINE
+;
+
 s_gatekeeper
 :
    GATEKEEPER NEWLINE
@@ -2216,6 +2226,7 @@ stanza
    | s_event_handler
    | s_failover
    | s_flow
+   | s_flow_sampler_map
    | s_foundry_mac_access_list
    | s_feature
    | s_gatekeeper

@@ -3199,6 +3199,11 @@ FLOW_SAMPLING_MODE
    'flow-sampling-mode'
 ;
 
+FLOW_SAMPLER_MAP
+:
+   'flow-sampler-map'
+;
+
 FLOW_TOP_TALKERS
 :
    'flow-top-talkers'
@@ -5734,6 +5739,11 @@ ON_SUCCESS
 ONE
 :
    'one'
+;
+
+ONE_OUT_OF
+:
+   'one-out-of'
 ;
 
 ONEP
