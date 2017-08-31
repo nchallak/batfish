@@ -3199,6 +3199,11 @@ FLOW_SAMPLING_MODE
    'flow-sampling-mode'
 ;
 
+FLOW_SAMPLER
+:
+   'flow-sampler'
+;
+
 FLOW_SAMPLER_MAP
 :
    'flow-sampler-map'
