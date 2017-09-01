@@ -8289,6 +8289,11 @@ SUPPRESS_FIB_PENDING
    'suppress-fib-pending'
 ;
 
+SUPPRESSED
+:
+   'suppressed'
+;
+
 SVC
 :
    'svc'
