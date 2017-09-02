@@ -19,6 +19,7 @@ public enum ConfigurationFormat {
   FORCE10("force10"),
   FOUNDRY("foundry"),
   HOST("host"),
+  HUAWEI("huawei"),
   IGNORED("ignored"),
   IPTABLES("iptables"),
   JUNIPER("juniper"),

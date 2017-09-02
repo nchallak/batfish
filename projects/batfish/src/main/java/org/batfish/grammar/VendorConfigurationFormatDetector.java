@@ -140,6 +140,14 @@ public final class VendorConfigurationFormatDetector {
   }
 
   @Nullable
+  private ConfigurationFormat checkHuawei() {
+    if (_firstChar == '#' && _fileText.contains("return")) {
+      return ConfigurationFormat.HUAWEI;
+    }
+    return null;
+  }
+
+  @Nullable
   private ConfigurationFormat checkJuniper() {
     if (_notJuniper) {
       return null;
@@ -306,6 +314,10 @@ public final class VendorConfigurationFormatDetector {
       return format;
     }
     format = checkVxWorks();
+    if (format != null) {
+      return format;
+    }
+    format = checkHuawei();
     if (format != null) {
       return format;
     }
