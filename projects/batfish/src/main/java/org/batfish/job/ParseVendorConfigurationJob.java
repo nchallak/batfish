@@ -20,6 +20,8 @@ import org.batfish.grammar.flatjuniper.FlatJuniperCombinedParser;
 import org.batfish.grammar.flatjuniper.FlatJuniperControlPlaneExtractor;
 import org.batfish.grammar.flatvyos.FlatVyosCombinedParser;
 import org.batfish.grammar.flatvyos.FlatVyosControlPlaneExtractor;
+import org.batfish.grammar.huawei.HuaweiCombinedParser;
+import org.batfish.grammar.huawei.HuaweiControlPlaneExtractor;
 import org.batfish.grammar.iptables.IptablesCombinedParser;
 import org.batfish.grammar.iptables.IptablesControlPlaneExtractor;
 import org.batfish.grammar.mrv.MrvCombinedParser;
@@ -257,6 +259,12 @@ public class ParseVendorConfigurationJob extends BatfishJob<ParseVendorConfigura
         MrvCombinedParser mrvParser = new MrvCombinedParser(_fileText, _settings);
         combinedParser = mrvParser;
         extractor = new MrvControlPlaneExtractor(_fileText, mrvParser, _warnings);
+        break;
+
+      case HUAWEI:
+        HuaweiCombinedParser hwParser = new HuaweiCombinedParser(_fileText, _settings);
+        combinedParser = hwParser;
+        extractor = new HuaweiControlPlaneExtractor(_fileText, hwParser, _warnings);
         break;
 
       case ALCATEL_AOS:

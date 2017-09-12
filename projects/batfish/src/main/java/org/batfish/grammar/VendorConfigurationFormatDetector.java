@@ -141,7 +141,7 @@ public final class VendorConfigurationFormatDetector {
 
   @Nullable
   private ConfigurationFormat checkHuawei() {
-    if (_firstChar == '#' && _fileText.contains("return")) {
+    if (_fileText.contains("return")) {
       return ConfigurationFormat.HUAWEI;
     }
     return null;

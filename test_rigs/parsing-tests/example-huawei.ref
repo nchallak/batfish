@@ -1,0 +1,51 @@
+{
+  "answerElements" : [
+    {
+      "class" : "org.batfish.datamodel.answers.ParseVendorConfigurationAnswerElement",
+      "fileMap" : {
+        "SwitchA" : "SwitchA.cfg"
+      },
+      "parseStatus" : {
+        "SwitchA" : "PASSED"
+      },
+      "parseTrees" : {
+        "SwitchA" : {
+          "sentences" : [
+            "(huawei_configuration",
+            "  (statement",
+            "    (s_sysname",
+            "      SYSNAME:'sysname'  <== mode:DEFAULT_MODE",
+            "      NAME:'SwitchA'  <== mode:DEFAULT_MODE",
+            "      NEWLINE:'\\n\\n'  <== mode:DEFAULT_MODE))",
+            "  (statement",
+            "    (s_vlan",
+            "      VLAN:'vlan'  <== mode:DEFAULT_MODE",
+            "      BATCH:'batch'  <== mode:DEFAULT_MODE",
+            "      NUMBER:'2'  <== mode:DEFAULT_MODE",
+            "      TO:'to'  <== mode:DEFAULT_MODE",
+            "      NUMBER:'8'  <== mode:DEFAULT_MODE",
+            "      NEWLINE:'\\n\\n'  <== mode:DEFAULT_MODE))",
+            "  EOF:<EOF>  <== mode:DEFAULT_MODE)"
+          ]
+        }
+      },
+      "version" : "0.30.0"
+    },
+    {
+      "class" : "org.batfish.datamodel.answers.ConvertConfigurationAnswerElement",
+      "version" : "0.30.0"
+    },
+    {
+      "class" : "org.batfish.datamodel.answers.InitInfoAnswerElement",
+      "parseStatus" : {
+        "SwitchA" : "PASSED"
+      }
+    }
+  ],
+  "status" : "SUCCESS",
+  "summary" : {
+    "numFailed" : 0,
+    "numPassed" : 0,
+    "numResults" : 0
+  }
+}

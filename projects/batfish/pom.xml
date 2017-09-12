@@ -95,6 +95,17 @@
               <statusDirectory>${project.build.directory}/maven-status/antlr4-mrv</statusDirectory>
             </configuration>
           </execution>
+          <execution>
+            <id>antlr4-huawei</id>
+            <goals>
+              <goal>antlr4</goal>
+            </goals>
+            <configuration>
+              <includes>**/HuaweiLexer.g4,**/HuaweiParser.g4</includes>
+              <libDirectory>${basedir}/src/main/antlr4/org/batfish/grammar/huawei</libDirectory>
+              <statusDirectory>${project.build.directory}/maven-status/antlr4-huawei</statusDirectory>
+            </configuration>
+          </execution>
 
           <!-- All the rest that do not have imports. Note that we exclude all the g4 files from above. -->
           <execution>
@@ -104,7 +115,7 @@
             </goals>
             <configuration>
               <includes>**/*.g4</includes>
-              <excludes>**/cisco/*.g4,**/flatjuniper/*.g4,**/flatvyos/*.g4,**/mrv/*.g4</excludes>
+              <excludes>**/cisco/*.g4,**/flatjuniper/*.g4,**/flatvyos/*.g4,**/mrv/*.g4,**/huawei/*.g4</excludes>
             </configuration>
           </execution>
         </executions>
