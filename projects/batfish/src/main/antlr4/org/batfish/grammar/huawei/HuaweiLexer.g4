@@ -44,6 +44,26 @@ TO
     'to'
 ;
 
+INTERFACE
+:
+    'interface' ->pushMode(M_Interface)
+;
+
+IP
+:
+    'ip'
+;
+
+ADDRESS
+:
+    'address'
+;
+
+IP_ADDRESS
+:
+   F_DecByte '.'  F_DecByte '.' F_DecByte '.' F_DecByte
+;
+
 NAME
 :
     [a-zA-Z_]+NUMBER?
@@ -66,17 +86,25 @@ COMMENT
     '#' F_NonNewline* F_Newline+ -> channel(HIDDEN)
 ;
 
+NEWLINE
+:
+    F_Newline+
+;
+
+fragment
+F_DecByte
+:
+    (F_Digit F_Digit F_Digit)
+    | (F_Digit F_Digit)
+    | (F_Digit)
+;
+
 fragment
 F_Whitespace
 :
    ' '
    | '\t'
    | '\u000C'
-;
-
-NEWLINE
-:
-    F_Newline+
 ;
 
 fragment
@@ -95,4 +123,42 @@ fragment
 F_Digit
 :
     [0-9]
+;
+
+mode M_Interface;
+M_Interface_NEWLINE
+:
+   F_Newline+
+
+   -> type ( NEWLINE ), popMode
+;
+
+M_Interface_INTERFACE
+:
+   'interface' -> type ( INTERFACE )
+;
+
+M_Interface_IP
+:
+   'ip' -> type ( IP )
+;
+
+M_Interface_ADDRESS
+:
+   'address' -> type ( ADDRESS )
+;
+
+M_Interface_IP_ADDRESS
+:
+   F_DecByte '.' F_DecByte '.' F_DecByte '.' F_DecByte -> type ( IP_ADDRESS )
+;
+
+M_Interface_WS
+:
+   F_Whitespace+ -> channel ( HIDDEN )
+;
+
+M_Interface_NAME
+:
+    [a-zA-Z_]+NUMBER? ->type ( NAME )
 ;

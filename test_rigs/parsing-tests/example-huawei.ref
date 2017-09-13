@@ -3,19 +3,19 @@
     {
       "class" : "org.batfish.datamodel.answers.ParseVendorConfigurationAnswerElement",
       "fileMap" : {
-        "SwitchA" : "SwitchA.cfg"
+        "SwitchA123" : "SwitchA.cfg"
       },
       "parseStatus" : {
-        "SwitchA" : "PASSED"
+        "SwitchA123" : "PASSED"
       },
       "parseTrees" : {
-        "SwitchA" : {
+        "SwitchA123" : {
           "sentences" : [
             "(huawei_configuration",
             "  (statement",
             "    (s_sysname",
             "      SYSNAME:'sysname'  <== mode:DEFAULT_MODE",
-            "      NAME:'SwitchA'  <== mode:DEFAULT_MODE",
+            "      NAME:'SwitchA123'  <== mode:DEFAULT_MODE",
             "      NEWLINE:'\\n\\n'  <== mode:DEFAULT_MODE))",
             "  (statement",
             "    (s_vlan",
@@ -25,6 +25,17 @@
             "      TO:'to'  <== mode:DEFAULT_MODE",
             "      NUMBER:'8'  <== mode:DEFAULT_MODE",
             "      NEWLINE:'\\n\\n'  <== mode:DEFAULT_MODE))",
+            "  (statement",
+            "    (s_interface",
+            "      INTERFACE:'interface'  <== mode:DEFAULT_MODE",
+            "      NAME:'Vlanif2'  <== mode:M_Interface",
+            "      NEWLINE:'\\n'  <== mode:M_Interface",
+            "      (s_interface_address_decl",
+            "        IP:'ip'  <== mode:DEFAULT_MODE",
+            "        ADDRESS:'address'  <== mode:DEFAULT_MODE",
+            "        IP_ADDRESS:'192.168.1.0'  <== mode:DEFAULT_MODE",
+            "        IP_ADDRESS:'255.255.255.0'  <== mode:DEFAULT_MODE",
+            "        NEWLINE:'\\n\\n'  <== mode:DEFAULT_MODE)))",
             "  EOF:<EOF>  <== mode:DEFAULT_MODE)"
           ]
         }
@@ -38,7 +49,7 @@
     {
       "class" : "org.batfish.datamodel.answers.InitInfoAnswerElement",
       "parseStatus" : {
-        "SwitchA" : "PASSED"
+        "SwitchA123" : "PASSED"
       }
     }
   ],
