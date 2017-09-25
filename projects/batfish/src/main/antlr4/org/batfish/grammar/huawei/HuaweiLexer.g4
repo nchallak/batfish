@@ -24,7 +24,7 @@ public void emit(Token token) {
 
 }
 
-// Lexer Rules
+// Lexer declarations
 
 SYSNAME
 :
@@ -59,6 +59,32 @@ ADDRESS
     'address'
 ;
 
+VRRP
+:
+    'vrrp'
+;
+
+VRID
+:
+    'vrid'
+;
+
+VIRTUALIP
+:
+    'virtual-ip'
+;
+
+VRRP_PRIORITY
+:
+    'priority'
+;
+
+VRRP_PREEMPT_TIMER_DELAY
+:
+    'preempt timer delay'
+;
+
+// Lexer expressions
 IP_ADDRESS
 :
    F_DecByte '.'  F_DecByte '.' F_DecByte '.' F_DecByte
